@@ -38,7 +38,7 @@ app.get('/api/contacts', async (req, res) => {
     }
   } catch (error) {
     console.error('Error retrieving contacts:', error);
-    return res.status(500).json({ success: false, error: 'Something went wrong', details: error.message });
+    // return res.status(500).json({ success: false, error: 'Something went wrong', details: error.message });
   }
 });
 

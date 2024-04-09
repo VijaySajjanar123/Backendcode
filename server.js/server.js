@@ -6,7 +6,10 @@ const app = express();
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/contacts', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
+  .then(() => {
+    console.log('Connected to MongoDB');
+    console.log(process.env.MONGODB_URI); // Logging MongoDB URI
+  })
   .catch(error => console.error('MongoDB connection error:', error));
 
 // Define Contact schema
@@ -48,7 +51,3 @@ const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
-
-
